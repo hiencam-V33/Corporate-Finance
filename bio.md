@@ -1,0 +1,6 @@
+About Me
+Hi, I’m Hien Cam, a founder and CEO in the medical technology sector with more than 23 years of experience in healthcare and medical devices. My career has focused on driving business growth, market expansion, and strategic partnerships while building organizations that create long-term value in healthcare innovation. I currently also serve as Vice President of the Ho Chi Minh City Medical Equipment Association, contributing to industry collaboration and healthcare ecosystem development in Vietnam.
+
+My expertise spans business strategy, leadership, healthcare commercialization, and market development, with a growing focus on finance, digital transformation, AI, and innovation management. Throughout my career, I have worked at the intersection of healthcare, technology, and entrepreneurship, leading initiatives in highly regulated and competitive markets.
+
+I hold a degree in Biomedical Engineering from Hanoi University of Science and Technology and am currently pursuing an Executive MBA at the University of Hawaiʻi at Mānoa. My long-term goal is to bridge healthcare, technology, and strategic leadership to build scalable, sustainable, and globally impactful healthcare businesses.
