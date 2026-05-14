@@ -1,6 +1,6 @@
 # Cam Thi Thu Hien
 
-📧 **Email:** [hien.cam@sagomed.com.vn](mailto:hien.cam@sagomed.com.vn) · 📱 **Phone:** (+84) 908-410-003
+📧 **Email:** [hien.cam@sagomed.com.vn](mailto:hien.cam@sagomed.com.vn) 
 🏠 **Permanent Address:** Ho Chi Minh City, Vietnam
 🔗 **LinkedIn:** [linkedin.com/in/hiencam-58a03598](https://www.linkedin.com/in/hiencam-58a03598) · 🌐 **Website:** [sagomed.com.vn](https://www.sagomed.com.vn)
 
