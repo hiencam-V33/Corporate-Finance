@@ -1,42 +1,29 @@
-# Data
+# data
 
-## Purpose
+This directory holds every dataset used in the BUS 629 portfolio: source financial statements, reference tables, downloaded extracts, and any transformed copies needed by the models. The non-negotiable rule for this folder is provenance — every file must have a PROVENANCE note explaining where it came from, when it was pulled, and how (if at all) it was transformed.
 
-This directory contains source financial data, reference datasets, and complete provenance documentation for all data used in models and analysis.
+Source files are treated as immutable. If a dataset needs cleaning or reshaping, save the transformed version as a new file with a clear suffix and document the transformation, rather than editing the original.
 
-## What Belongs Here
+## Naming conventions
 
-- Source financial data files (CSV, Excel, JSON)
-- Reference data and lookup tables
-- Data documentation and data dictionaries
-- Provenance and source attribution notes
-- Data extraction and transformation logs
-- Change history and update records
+- Source files: `[DataType]_[Source]_[YYYY-MM-DD].xlsx` (e.g. `FinancialStatements_CompanyXYZ_2026-05-15.xlsx`).
+- Reference tables: `REF_[Category].csv` (e.g. `REF_ExchangeRates.csv`).
+- Transformed copies: append `_clean`, `_normalized`, or `_v[N]` before the date.
+- Provenance notes: `PROVENANCE_[DatasetName].md`, one per dataset.
+- Update logs: `UPDATE_LOG_[DatasetName]_[YYYY-MM-DD].md`.
 
-## Naming Conventions
+## What goes here
 
-- **Source data files:** `[DataType]_[Source]_[Date].xlsx`
-  - Example: `FinancialStatements_CompanyXYZ_2026-05-15.xlsx`
-- **Reference data:** `REF_[Category].csv`
-  - Example: `REF_ExchangeRates.csv`
-- **Provenance notes:** `PROVENANCE_[DatasetName].md`
-  - Example: `PROVENANCE_HistoricalRevenue.md`
-- **Update logs:** `UPDATE_LOG_[DatasetName]_[Date].txt`
-  - Example: `UPDATE_LOG_MarketData_2026-05-15.txt`
+- Original source data files downloaded or exported from external systems.
+- Reference tables and lookups (currencies, tax rates, industry codes).
+- Transformed / cleaned versions of source data, clearly labeled.
+- Provenance notes documenting source, retrieval method, retrieval date, and transformations.
+- Data dictionaries for non-trivial schemas (paired with `SPEC_DataSchema_*` in `docs/specs/`).
 
-## Getting Started
+## What does NOT go here
 
-1. Always include a PROVENANCE note with each new data file
-2. Document the data source and extraction method
-3. Note any transformations or calculations applied
-4. Record the date of extraction and expected refresh date
-5. Link to original source systems where applicable
-
-## Guidelines
-
-- Never modify source data files directly; create transformed versions instead
-- Document all data transformations and business logic
-- Maintain complete update history for audit purposes
-- Include data quality notes and any known issues
-- Keep file sizes reasonable; archive old versions
-- Provide data dictionaries for complex datasets
+- Excel models or workbooks that compute on the data (use `models/`).
+- Analysis or validation outputs computed from the data (use `analysis/`).
+- Specifications describing the schema (use `docs/specs/`).
+- Confidential or proprietary data without explicit authorization to commit.
+- Personal scratch CSVs, throwaway exports, or files without a PROVENANCE note.

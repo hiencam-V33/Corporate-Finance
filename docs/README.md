@@ -1,48 +1,26 @@
-# Docs
+# docs
 
-## Purpose
+This directory is the written-word layer of the BUS 629 portfolio. It holds every artifact whose primary purpose is to explain, decide, plan, or standardize — not to compute. Anything a reader (Prof. Stauffer, a teammate, a future employer) would read to understand *why* something was built or *how* it should be used belongs here.
 
-This directory contains all written materials, reference documents, and organizational frameworks including decision memos, technical specifications, project plans, and canonical templates.
+The folder is organized into four sub-areas: `decisions/` for decision records, `specs/` for technical and analytical specifications, `plans/` for project plans and timelines, and `templates/` for the canonical Stage 0 course templates supplied by the instructor.
 
-## Directory Structure
+## Naming conventions
 
-- `Decisions/` — Formal decision records, memos, and trade-off documentation
-- `Specs/` — Technical specifications, model assumptions, data schemas, and design notes
-- `plans/` — Project plans, timelines, milestones, and schedules
-- `templates/` — Canonical course templates and reusable document frameworks
+- General documents: `[TYPE]_[Topic]_[YYYY-MM-DD].md` (e.g. `DECISION_ModelingApproach_2026-05-15.md`).
+- Versioned documents: append `_v[N]` before the date (e.g. `SPEC_DCF_Assumptions_v2.md`).
+- Use kebab-case for multi-word topics inside the slug; never use spaces.
+- All dates are ISO-8601 (`YYYY-MM-DD`), not US-style.
 
-## What Belongs Here
+## What goes here
 
-- Formal decision memos and meeting notes
-- Technical and functional specifications
-- Project plans and timelines
-- Standards and templates for consistent documentation
-- Process documentation and guidelines
-- Reference materials
+- Index/landing READMEs that route the reader to the right sub-folder.
+- Cross-cutting documentation that spans multiple sub-areas.
+- Top-level reference pages and glossaries used across the project.
 
-## Naming Conventions
+## What does NOT go here
 
-- **Decision documents:** `DECISION_[Topic]_[Date].md`
-  - Example: `DECISION_ModelingApproach_2026-05-15.md`
-- **Specifications:** `SPEC_[Component]_v[Version].md`
-  - Example: `SPEC_DataRequirements_v1.md`
-- **Plans:** `PLAN_[Project]_[Phase].md`
-  - Example: `PLAN_CashFlowModel_Phase1.md`
-- **Templates:** `TEMPLATE_[DocumentType].md`
-  - Example: `TEMPLATE_MemoFormat.md`
-
-## Getting Started
-
-1. Review the README in each subdirectory for specific conventions
-2. Use templates from `templates/` for new documents
-3. Link related specifications and decisions
-4. Version control important documents
-5. Archive superseded documents with notes on their replacement
-
-## Guidelines
-
-- Keep documents focused and modular
-- Use consistent formatting and structure
-- Maintain cross-references between related documents
-- Archive outdated versions with notes on updates
-- Include dates and version numbers in all formal documents
+- Excel models or workbooks (use `models/`).
+- Raw data files, CSVs, or extracts (use `data/`).
+- Validation reports or audit outputs (use `analysis/validation/`).
+- Final presentation-ready deliverables (use `deliverables/`).
+- Working notes or scratch files that are not intended to be read by anyone else.

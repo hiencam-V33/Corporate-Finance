@@ -1,42 +1,29 @@
-# Decisions
+# decisions
 
-## Purpose
+This directory stores formal decision records (ADR-style memos) that document choices made during the BUS 629 project: methodology selections, scoping calls, trade-offs between alternatives, and approvals. Every non-trivial decision that future readers might second-guess should have a memo here.
 
-This directory contains formal decision records, executive memos, trade-off analyses, and meeting outcomes that document key decisions made during project execution.
+Each memo should make the decision auditable: state the question, the alternatives considered, the choice, and the reasoning. Once written, decision records are immutable — if a decision is later reversed, write a new record that supersedes the old one rather than editing history.
 
-## What Belongs Here
+## Naming conventions
 
-- Formal decision memos with rationale and trade-offs
-- Executive summaries of key decisions
-- Meeting notes and action items
-- Trade-off analyses and recommendations
-- Approval records and sign-offs
-- Policy and standard decisions
+- Decision memos: `DECISION_[Topic]_[YYYY-MM-DD].md` (e.g. `DECISION_ModelingApproach_2026-05-15.md`).
+- Trade-off analyses: `TRADEOFF_[OptionA-vs-OptionB]_[YYYY-MM-DD].md`.
+- Meeting notes that produced a decision: `NOTES_[MeetingType]_[YYYY-MM-DD].md`.
+- Sign-off artifacts: `SIGNOFF_[Decision]_[YYYY-MM-DD].pdf`.
+- Use kebab-case in the `[Topic]` slug; spell out the topic, do not abbreviate.
 
-## Naming Conventions
+## What goes here
 
-- **Decision memos:** `DECISION_[Topic]_[Date].md`
-  - Example: `DECISION_ModelingApproach_2026-05-15.md`
-- **Meeting notes:** `NOTES_[MeetingType]_[Date].md`
-  - Example: `NOTES_SteeringCommittee_2026-05-15.md`
-- **Trade-off analyses:** `TRADEOFF_[Options]_[Date].md`
-  - Example: `TRADEOFF_DCFvComparables_2026-05-15.md`
-- **Sign-off records:** `SIGNOFF_[Decision]_[Date].pdf`
-  - Example: `SIGNOFF_ModelApproval_2026-05-15.pdf`
+- Decision memos with context, options, choice, and rationale.
+- Side-by-side trade-off analyses comparing two or more options.
+- Meeting notes whose primary output is a decision or commitment.
+- Approval records, sign-offs, and stakeholder confirmations.
+- Records of reversed or superseded decisions (kept for the audit trail).
 
-## Getting Started
+## What does NOT go here
 
-1. Document decisions while they are fresh
-2. Include rationale and alternatives considered
-3. Note stakeholders involved and their positions
-4. Reference supporting documents and specifications
-5. Include dates and version numbers
-
-## Guidelines
-
-- Every decision should have a clear statement of what was decided
-- Include pros/cons of alternatives considered
-- Document who made the decision and stakeholder input
-- Link to related specifications or implementation plans
-- Archive superseded decisions with notes on updates
-- Use consistent decision memo format from `/templates/`
+- Technical specifications describing *how* something is built (use `docs/specs/`).
+- Project plans, schedules, or milestones (use `docs/plans/`).
+- General meeting notes with no decision attached (keep locally or in `docs/`).
+- Drafts of decisions that have not yet been made — keep in scratch until finalized.
+- Anything that would need to be edited regularly; decision records should be immutable.

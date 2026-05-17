@@ -1,44 +1,29 @@
-# Specs
+# specs
 
-## Purpose
+This directory holds technical and analytical specifications: the documents that define *how* models, datasets, and calculations are constructed. Specs are the contract between a decision and an implementation — they translate "we chose DCF" into "here are the assumptions, inputs, formulas, and outputs."
 
-This directory contains technical specifications, model assumptions, data schemas, and design documentation that define how systems and models are built and operated.
+Specs are versioned because methodology evolves. When a spec changes materially, bump the version rather than overwriting, and link the new version back to the decision record that authorized the change.
 
-## What Belongs Here
+## Naming conventions
 
-- Model architecture and assumptions documentation
-- Data schema and structure specifications
-- Technical interface and API specifications
-- Input and output specifications
-- Calculation methodologies and formulae
-- System design and integration notes
-- Business logic specifications
+- Model specs: `SPEC_[ModelName]_[Component]_v[N].md` (e.g. `SPEC_DCF_Assumptions_v2.md`).
+- Data schema specs: `SPEC_DataSchema_[Entity]_v[N].md` (e.g. `SPEC_DataSchema_FinancialStatements_v1.md`).
+- Methodology documents: `METHODOLOGY_[Process]_v[N].md`.
+- Interface or integration specs: `SPEC_Interface_[System]_v[N].md`.
+- Always use `v1`, `v2`, … (no leading zeros, no `v1.0`).
 
-## Naming Conventions
+## What goes here
 
-- **Model specs:** `SPEC_[ModelName]_[Component]_v[Version].md`
-  - Example: `SPEC_DCF_Assumptions_v2.md`
-- **Data specs:** `SPEC_DataSchema_[Entity]_v[Version].md`
-  - Example: `SPEC_DataSchema_FinancialStatements_v1.md`
-- **Interface specs:** `SPEC_Interface_[SystemName]_v[Version].md`
-  - Example: `SPEC_Interface_DataImport_v1.md`
-- **Methodology docs:** `METHODOLOGY_[Process]_v[Version].md`
-  - Example: `METHODOLOGY_CashFlowCalculation_v1.md`
+- Model architecture documents: assumptions, inputs, calculation flow, outputs.
+- Data dictionaries and schema definitions for datasets in `data/`.
+- Methodology write-ups (e.g. how WACC is calculated, how comps are selected).
+- Acceptance criteria and validation rules for models and data.
+- Worked numerical examples that anchor a calculation.
 
-## Getting Started
+## What does NOT go here
 
-1. Document all assumptions in model specifications
-2. Include calculations and formulae explicitly
-3. Define data inputs, outputs, and validation rules
-4. Version all specifications
-5. Update when assumptions or methodology changes
-
-## Guidelines
-
-- Be precise and explicit; avoid ambiguity
-- Include worked examples for complex calculations
-- Document dependencies between specifications
-- Link to related plans and decisions
-- Maintain version control; archive superseded specs
-- Keep specifications current with actual implementations
-- Include acceptance criteria for testing
+- The Excel models themselves (use `models/builds/` or `models/templates/`).
+- The raw data being described (use `data/`).
+- The reason a methodology was chosen (use `docs/decisions/`).
+- Project timelines or owner assignments (use `docs/plans/`).
+- Validation results showing the spec was met (use `analysis/validation/`).

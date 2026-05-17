@@ -1,46 +1,30 @@
-# Builds
+# builds (models)
 
-## Purpose
+This directory holds Stage 3 model builds: populated, versioned, and validated workbooks that represent the working artifacts of the BUS 629 portfolio. Anything in `builds/` should be auditable end-to-end — every input traceable to a file in `data/`, every methodology choice traceable to a document in `docs/specs/`, every validation traceable to a report in `analysis/validation/`.
 
-This directory contains populated, production-ready, and audited working models in their final or near-final state (Stage 3). All models here should be versioned, documented, and validated.
+Builds are versioned, not overwritten. When a model is materially revised, save a new version and update the change log; keep older versions in place so the project's history is preserved.
 
-## What Belongs Here
+## Naming conventions
 
-- Completed, working financial models
-- Models that have passed validation and audit
-- Versioned model files with change history
-- Model documentation and assumption summaries
-- Model testing and validation records
-- Change logs and version notes
-- Supporting documentation and methodologies
+- Working builds: `[ModelName]_v[N]_[YYYY-MM-DD].xlsx` (e.g. `DCF_Valuation_v3_2026-05-15.xlsx`).
+- Signed-off final builds: `[ModelName]_v[N]_FINAL_[YYYY-MM-DD].xlsx`.
+- Change logs: `CHANGELOG_[ModelName].md`, one per model.
+- Validation links: `VALIDATION_[ModelName]_v[N]_[YYYY-MM-DD].md` (the report itself lives in `analysis/validation/`; a pointer file may live here).
+- Use PascalCase for `[ModelName]`; never embed spaces in filenames.
 
-## Naming Conventions
+## What goes here
 
-- **Build files:** `[ModelName]_v[Version]_[Date].xlsx`
-  - Example: `DCF_Valuation_v3_2026-05-15.xlsx`
-- **Final builds:** `[ModelName]_v[Version]_FINAL_[Date].xlsx`
-  - Example: `DCF_v3_FINAL_2026-05-15.xlsx`
-- **Change logs:** `CHANGELOG_[ModelName].md`
-  - Example: `CHANGELOG_DCF.md`
-- **Validation records:** `VALIDATION_[ModelName]_v[Version]_[Date].md`
-  - Example: `VALIDATION_DCF_v3_2026-05-15.md`
+- Populated working models that have passed initial review.
+- Final, signed-off model versions.
+- Change logs documenting what changed between versions and why.
+- Model-level README files describing sheet layout, inputs, and outputs.
+- Pointers (short markdown files) linking each build to its spec, data sources, and validation report.
 
-## Getting Started
+## What does NOT go here
 
-1. Ensure models are fully validated before placing here
-2. Include complete change log with version history
-3. Document model assumptions and methodologies
-4. Link to validation reports in `/analysis/validation/`
-5. Maintain version numbers for traceability
-
-## Guidelines
-
-- Only place audited, working models here
-- Always include version number and date in file name
-- Maintain complete change logs for each model
-- Archive older versions rather than deleting
-- Include README or documentation file for each major model
-- Update change log when modifications are made
-- Link to related specifications in `/docs/Specs/`
-- Document any known limitations or assumptions
-- Store supporting data files in `/data/`
+- Blank or template workbooks (use `models/templates/`).
+- Scratch / experimental workbooks not yet ready for review.
+- Raw input data used by the models (use `data/`).
+- The methodology spec or assumption documents themselves (use `docs/specs/`).
+- The validation reports themselves (use `analysis/validation/`).
+- Exported PDFs, slide decks, or presentation outputs (use `deliverables/`).

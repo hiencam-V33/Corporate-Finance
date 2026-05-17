@@ -1,46 +1,29 @@
-# Templates
+# templates (models)
 
-## Purpose
+This directory holds Stage 1 model templates: blank Excel frameworks with structure, formulas, and instructions but no live project data. Templates here are the starting point for any new model — pick the appropriate template, copy it, populate it, and promote the populated workbook to `models/builds/` once it is validated.
 
-This directory contains blank model frameworks, starter workbooks, and guidance documentation for building new financial models (Stage 1).
+A good template is opinionated: it bakes in the layout (inputs / calculations / outputs as separate sheets), the formatting convention (input cells blue, formula cells black, links green), and the basic structure of the calculation, so each new build does not reinvent the wheel.
 
-## What Belongs Here
+## Naming conventions
 
-- Blank Excel model frameworks and templates
-- Starter workbooks with structure but no data
-- Model-building guidance and best practices documents
-- Sample calculations and example structures
-- Instruction guides for using templates
-- Model architecture and layout standards
+- Template workbooks: `TEMPLATE_[ModelType].xlsx` (e.g. `TEMPLATE_DCF_Valuation.xlsx`).
+- Worked examples: `EXAMPLE_[ModelType]_[Scenario].xlsx` (e.g. `EXAMPLE_DCF_SampleCo.xlsx`).
+- Build instructions: `GUIDE_[ModelType].md`.
+- Best-practice notes: `BEST_PRACTICES_[Category].md`.
+- Use PascalCase for the `[ModelType]` slug.
 
-## Naming Conventions
+## What goes here
 
-- **Template files:** `TEMPLATE_[ModelType].xlsx`
-  - Example: `TEMPLATE_DCF_Valuation.xlsx`
-  - Example: `TEMPLATE_CashFlow_Projection.xlsx`
-- **Instruction guides:** `GUIDE_[ModelType].md`
-  - Example: `GUIDE_DCF_BuildingInstructions.md`
-- **Best practice docs:** `BEST_PRACTICES_[ModelCategory].md`
-  - Example: `BEST_PRACTICES_FinancialModeling.md`
-- **Reference models:** `EXAMPLE_[ModelType]_[Scenario].xlsx`
-  - Example: `EXAMPLE_DCF_SampleCo.xlsx`
+- Blank Excel templates for each canonical model type (DCF, ratio analysis, capital budgeting, etc.).
+- Worked example workbooks demonstrating a template against fictional data.
+- Build instructions and usage guides for each template.
+- Best-practice notes on layout, formula conventions, and auditability.
+- Reference parameter sheets reused across templates (e.g. tax rates, formatting standards).
 
-## Getting Started
+## What does NOT go here
 
-1. Select a template matching your modeling needs
-2. Read the associated GUIDE document
-3. Copy the template and create your working model
-4. Follow the structure and naming conventions in the template
-5. When complete and validated, move model to `/builds/`
-
-## Guidelines
-
-- Templates should be reusable and adaptable
-- Include clear, commented instructions
-- Maintain standard layout and structure
-- Include example formulas and calculations
-- Provide data validation and input checking where appropriate
-- Document assumptions built into the template
-- Keep templates generic enough for multiple use cases
-- Update templates based on feedback and lessons learned
-- Version templates and archive previous versions
+- Populated, project-specific models (use `models/builds/`).
+- Real source data — examples should use clearly fictional values (use `data/` for real data).
+- Validation reports for models built from these templates (use `analysis/validation/`).
+- Document templates such as memos or spec scaffolds (use `docs/templates/`).
+- Personal copies of templates that have been modified for one-off use.

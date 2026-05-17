@@ -1,39 +1,29 @@
-# Validation
+# validation
 
-## Purpose
+This directory holds Stage 3 model validation artifacts: self-audit reports, reconciliations against source data, acceptance-criteria checks, and the supporting evidence behind each pass/fail conclusion. A model in `models/builds/` is not considered complete until it has a corresponding validation report here.
 
-This directory contains stage 3 validation reports, self-audits, and quality assurance materials for models and datasets.
+Each validation report should be reproducible. Anyone reading it should be able to point to the exact model version it covers, the data inputs that were used, the tests that were run, and the criteria the model was judged against.
 
-## What Belongs Here
+## Naming conventions
 
-- Model validation reports with test results
-- Reconciliation notes and variance analysis
-- Audit trails and audit logs
-- Data quality assessments
-- Error tracking and resolution notes
-- Sign-off documentation
+- Validation reports: `VALIDATION_[ModelName]_v[N]_[YYYY-MM-DD].md` (e.g. `VALIDATION_DCF_v3_2026-05-15.md`).
+- Reconciliation worksheets: `RECONCILIATION_[ModelName]_[Component]_[YYYY-MM-DD].xlsx`.
+- Audit logs: `AUDITLOG_[Subject]_[YYYY-MM-DD]_to_[YYYY-MM-DD].md`.
+- Sign-off records: `SIGNOFF_VALIDATION_[ModelName]_v[N]_[YYYY-MM-DD].md`.
+- Always reference the specific model version (`v[N]`) being validated.
 
-## Naming Conventions
+## What goes here
 
-- **Validation reports:** `[ModelName]_Validation_[Phase]_[Date].md`
-  - Example: `DCF_Validation_Stage3_2026-05-15.md`
-- **Reconciliation files:** `Reconciliation_[Component]_[Date].xlsx`
-  - Example: `Reconciliation_CashFlow_2026-05-15.xlsx`
-- **Audit logs:** `AuditLog_[Subject]_[DateRange].txt`
-  - Example: `AuditLog_DataLoads_2026-05-01_to_2026-05-15.txt`
+- Validation reports with methodology, test cases, results, and pass/fail conclusions.
+- Reconciliations between model output and source data or independent calculations.
+- Audit trails recording who reviewed what and when.
+- Lists of known issues, deviations, and accepted limitations.
+- Sign-off records confirming a model has been validated for use.
 
-## Getting Started
+## What does NOT go here
 
-1. Document all validation assumptions clearly
-2. Include timestamps and version numbers
-3. Link to source models and data files
-4. Maintain complete audit trails
-5. Provide clear pass/fail or acceptance criteria
-
-## Guidelines
-
-- Validation reports must be reproducible
-- Include methodology and test cases
-- Document any deviations or issues found
-- Keep audit trails for compliance and traceability
-- Archive completed validations by completion date
+- The model files being validated (use `models/builds/`).
+- The data being reconciled against (use `data/`).
+- The specification describing how the model should behave (use `docs/specs/`).
+- Sensitivity or scenario analyses run on a validated model (use `analysis/` directly).
+- Final externally-facing reports summarizing validation outcomes (use `deliverables/`).

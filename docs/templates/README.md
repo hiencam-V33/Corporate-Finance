@@ -1,46 +1,28 @@
-# Templates
+# templates
 
-## Purpose
+This directory holds the canonical Stage 0 document templates supplied or sanctioned for the BUS 629 course: memo templates, spec templates, decision-record templates, and the other reusable frameworks that keep every new document consistent in tone, structure, and format.
 
-This directory contains canonical templates and reusable document frameworks that establish standards for consistency across all formal documentation, memos, specifications, and deliverables.
+Templates here are masters. Never edit a master template to fill it in for a real document — copy it to the appropriate working directory (`docs/decisions/`, `docs/specs/`, etc.) first, then complete the copy.
 
-## What Belongs Here
+## Naming conventions
 
-- Memo templates (standard format and structure)
-- Specification templates
-- Report templates
-- Decision memo templates
-- Model documentation templates
-- Data provenance templates
-- Meeting note templates
-- Sign-off and approval templates
+- Markdown templates: `TEMPLATE_[DocumentType].md` (e.g. `TEMPLATE_DecisionMemo.md`).
+- Word templates: `TEMPLATE_[DocumentType].docx`.
+- Excel templates: `TEMPLATE_[SheetType].xlsx`.
+- Presentation templates: `TEMPLATE_[PresentationType].pptx`.
+- Usage guides paired with a template: `GUIDE_[TemplateName].md`.
 
-## Naming Conventions
+## What goes here
 
-- **Document templates:** `TEMPLATE_[DocumentType].docx` or `.md`
-  - Example: `TEMPLATE_Memo.docx`
-  - Example: `TEMPLATE_Specification.md`
-- **Excel templates:** `TEMPLATE_[SheetType]_[Purpose].xlsx`
-  - Example: `TEMPLATE_Timeline_ProjectPlan.xlsx`
-- **Presentation templates:** `TEMPLATE_[Type].pptx`
-  - Example: `TEMPLATE_ExecutiveBriefing.pptx`
-- **Supporting guides:** `GUIDE_[TemplateName].md`
-  - Example: `GUIDE_UsingMemoTemplate.md`
+- Master templates for memos, decisions, specs, plans, and validation reports.
+- Course-supplied document scaffolds for BUS 629 Stage 0.
+- Usage guides explaining when and how to apply each template.
+- Style references (citation format, heading conventions, file-naming rules).
+- Versioned masters when a template materially evolves.
 
-## Getting Started
+## What does NOT go here
 
-1. Use these templates for all new formal documents
-2. Read the associated GUIDE document for each template
-3. Adapt templates as needed but maintain consistent structure
-4. Do not modify master templates; create copies for your work
-5. When templates are updated, notify collaborators
-
-## Guidelines
-
-- Keep templates simple and focused
-- Include example sections and placeholder text
-- Provide usage guidelines for each template
-- Version templates and archive previous versions
-- Solicit feedback from users on template effectiveness
-- Update templates based on lessons learned
-- Maintain consistency across all organizational documents
+- Filled-in documents that started from a template — those belong in the working folder for their type.
+- Drafts or work-in-progress versions of new templates not yet adopted.
+- One-off documents that will never be reused.
+- Course handouts that are not templates (place those in `docs/` or `data/` as appropriate).
