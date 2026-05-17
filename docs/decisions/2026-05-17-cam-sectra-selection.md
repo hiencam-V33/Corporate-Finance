@@ -73,6 +73,7 @@ This memo's hypotheses rest on FY24/25 year-end disclosures and forward CEO guid
 - Sectra AB Investor Relations: https://investor.sectra.com (Annual Reports FY22/23, 23/24, 24/25). Accessed 2026-05-17.
 - Sectra FY24/25 Year-End Press Release (June 5, 2025): https://sectra.com/news-and-press-releases/news-item/B25E9F6BE58D2EAB/
 - Sectra Year in Brief 2024/2025: https://investor.sectra.com/financial-reports/the-year-in-brief-2024-2025/
-- KLAS PACS Comparison 2025 (Sectra ranked #1, 13 consecutive years).
+- KLAS PACS 2025 Report — "Consistent Support and Ongoing Product Development Are Key to Customer Success": https://klasresearch.com/report/pacs-2025-consistent-support-and-ongoing-product-development-are-key-to-customer-success/3159 (Sectra ranked #1 in PACS, 13 consecutive years in US). Accessed 2026-05-17.
+   - Sectra "Best in KLAS" page: https://medical.sectra.com/about-sectra/sectra-pacs-best-in-klas/ Accessed 2026-05-17.
 - Yahoo Finance (SECT-B.ST): historical price and market data. Accessed 2026-05-17.
 - Riksbank.se: SEK FX rates against USD/GBP/EUR.
