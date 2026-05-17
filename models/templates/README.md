@@ -1,29 +1,27 @@
-# templates (models)
+# Model Templates
 
-This directory holds Stage 1 model templates: blank Excel frameworks with structure, formulas, and instructions but no live project data. Templates here are the starting point for any new model — pick the appropriate template, copy it, populate it, and promote the populated workbook to `models/builds/` once it is validated.
+This directory contains blank model frameworks provided by the course instructor (Professor Adam Stauffer), not student-built. These templates standardize the modeling architecture across the entire BUS 629 VEMBA class so every student works from the same structural foundation.
 
-A good template is opinionated: it bakes in the layout (inputs / calculations / outputs as separate sheets), the formatting convention (input cells blue, formula cells black, links green), and the basic structure of the calculation, so each new build does not reinvent the wheel.
+## Current Templates
 
-## Naming conventions
+- **performance-ratios-template.xlsx** — 6 tabs: `Cover & Instructions`, `Legend`, `Income Statement`, `Balance Sheet`, `Cash Flow`, `Ratios`. Uses named-range conventions for cross-sheet references:
+  - `INC_*` — Income Statement line items
+  - `BAL_*` — Balance Sheet line items
+  - `CASH_*` — Cash Flow Statement line items
+  - `RATIO_*` — calculated performance ratios
 
-- Template workbooks: `TEMPLATE_[ModelType].xlsx` (e.g. `TEMPLATE_DCF_Valuation.xlsx`).
-- Worked examples: `EXAMPLE_[ModelType]_[Scenario].xlsx` (e.g. `EXAMPLE_DCF_SampleCo.xlsx`).
-- Build instructions: `GUIDE_[ModelType].md`.
-- Best-practice notes: `BEST_PRACTICES_[Category].md`.
-- Use PascalCase for the `[ModelType]` slug.
+## Color Conventions
 
-## What goes here
+- **Yellow** — Inputs (raw financial data entered from source filings)
+- **Blue** — Assumptions (driver values that can be flexed)
+- **Green** — Formulas (calculated cells, do not overwrite)
+- **Gray** — Outputs (final reported figures and ratio results)
 
-- Blank Excel templates for each canonical model type (DCF, ratio analysis, capital budgeting, etc.).
-- Worked example workbooks demonstrating a template against fictional data.
-- Build instructions and usage guides for each template.
-- Best-practice notes on layout, formula conventions, and auditability.
-- Reference parameter sheets reused across templates (e.g. tax rates, formatting standards).
+## Usage
 
-## What does NOT go here
+Templates in this directory are kept **unmodified** during Stage 1 — treat them as read-only reference copies. When Stage 3 begins, copy the relevant template into `models/builds/` and populate it with the data of your assigned company. Never edit the originals here; the integrity of the shared framework depends on them staying clean.
 
-- Populated, project-specific models (use `models/builds/`).
-- Real source data — examples should use clearly fictional values (use `data/` for real data).
-- Validation reports for models built from these templates (use `analysis/validation/`).
-- Document templates such as memos or spec scaffolds (use `docs/templates/`).
-- Personal copies of templates that have been modified for one-off use.
+## Source
+
+Original template authored by Professor Adam Stauffer:
+https://github.com/adamwstauffer/shidler/blob/main/docs/templates/spreadsheets/performance-ratios-template.xlsx
