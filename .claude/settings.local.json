@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($h1 = \\(Get-FileHash \"models\\\\templates\\\\performance-ratios-template.xlsx\" -Algorithm SHA256\\).Hash; $h2 = \\(Get-FileHash \"docs\\\\templates\\\\performance-ratios-template.xlsx\" -Algorithm SHA256\\).Hash; Write-Output \"models/templates hash: $h1\"; Write-Output \"docs/templates hash:   $h2\"; if \\($h1 -eq $h2\\) { Write-Output \"MATCH - safe to delete duplicate in docs/templates/\" } else { Write-Output \"DIFFERENT - need to investigate\" })",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git push *)"
+    ]
+  }
+}
