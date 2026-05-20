@@ -2,6 +2,13 @@
 template: memo
 purpose: "Stage 2 company selection memo — Sectra AB"
 audience: instructor
+status: draft
+owner: Cam
+created: 2026-05-17
+tags:
+  - stage-2
+  - company-selection
+  - sectra
 fields_required: [title, to, from, date, re, executive_summary, background, method, findings, implications, limitations, references]
 naming_convention: "YYYY-MM-DD-{slug}.md"
 courses: [BUS-629]
