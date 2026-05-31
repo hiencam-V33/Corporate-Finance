@@ -11,6 +11,8 @@
 
 > **A note on how this analysis was produced.** The Stage 4 specification was executed by Google Gemini 2.5 Pro to produce a raw analysis (file linked above). I then manually recomputed seven ratios from the Stage 3 workbook (verification artifact linked above), evaluated where the LLM was correct and where it deviated, and rewrote the analysis with corrections, annotations, and executive judgment. Section 5 documents the LLM evaluation in full; Section 6 is my own investment thesis.
 
+> **Stage 2 and Stage 3 PR feedback incorporated.** The instructor's PR review of the Stage 2 selection memo (May 22, 2026; 97.11% / 4.37 of 4.5) noted that the original memo's prose was significantly over the 400–600-word senior-analyst target. A revised memo at 478 prose words is shipped at `docs/decisions/2026-05-31-cam-sectra-selection-revised.md`, with the full feedback-response documented at `docs/decisions/2026-05-31-cam-stage2-feedback-response.md`. The length discipline learned from that review shaped the section-budget approach used in this final analysis and the spec retrospective. The Stage 3 PR review (May 22, 2026; 99% / 8.91 of 9) confirmed the workbook met the four criteria — balance-sheet balance, named-range population, documentation, and ratio resolution — and provided forward guidance to "reference named ranges directly" and "use the Stage 4 HIL iteration pass to catch spec gaps." Both guidance items were executed in the Stage 4 spec (named-range notation throughout) and documented in the spec retrospective (HIL iteration on the `_curr` / `_prior` convention deviation).
+
 ---
 
 ## 1. Company & Data Summary
@@ -118,9 +120,9 @@ The Du Pont decomposition isolates which structural drivers produce Sectra's eli
 
 **Three-factor decomposition (direct, start-of-year basis):**
 
-ROE 35.89% = Profit Margin 17.39% × Asset Turnover 1.009× × Equity Multiplier 2.044×
+ROE 35.89% = Profit Margin 17.39% × Asset Turnover 1.009× × Equity Multiplier 2.046×
 
-Where equity multiplier = start-of-year total assets / start-of-year equity = 3,210,938 / 1,569,591 = 2.044×.
+Where equity multiplier = start-of-year total assets / start-of-year equity = 3,210,938 / 1,569,591 = 2.046×.
 
 **Four-factor decomposition (workbook variant, mixed-basis):**
 
