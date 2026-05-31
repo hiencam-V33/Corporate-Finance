@@ -1,29 +1,26 @@
 # models
 
-This directory contains all financial models built for the BUS 629 portfolio: Excel workbooks, supporting calculation files, and their accompanying documentation. Models are organized along the course's two-stage flow — `templates/` for blank, Stage 1 starter frameworks, and `builds/` for populated, validated, Stage 3 working models.
+Excel workbooks: the templates the course provides and the populated models I built from them. The discipline this folder enforces is the separation between **template** (unmodified course-provided structure) and **build** (my populated workbook with the company's data).
 
-Every working model should be reproducible from its inputs and its spec. If a reader cannot rebuild the model from the documents in `docs/specs/` and the data in `data/`, the model is undocumented and not ready for `builds/`.
+## Subdirectories
 
-## Naming conventions
+- [`templates/`](./templates) — Stage 1 ratios template, unmodified. The course-provided starting point with named ranges, ratio formulas, and validation tabs pre-defined.
+- [`builds/`](./builds) — Stage 3 populated Sectra workbook. Income Statement, Balance Sheet, and Cash Flow tabs filled with Sectra's FY2024/2025 audited financials and prior-year comparatives, sourced from the Annual Report. The Ratios tab auto-computes once the statement tabs are populated.
 
-- Working model files: `[ModelName]_v[N]_[YYYY-MM-DD].xlsx` (e.g. `DCF_Valuation_v3_2026-05-15.xlsx`).
-- Final / signed-off builds: `[ModelName]_v[N]_FINAL_[YYYY-MM-DD].xlsx`.
-- Template files: `TEMPLATE_[ModelType].xlsx`.
-- Change logs: `CHANGELOG_[ModelName].md`, kept beside the model.
-- Use PascalCase for `[ModelName]`; do not use spaces in filenames.
+## Naming convention
 
-## What goes here
+- Templates: keep the course-provided filename (`performance-ratios-template.xlsx`).
+- Builds: `YYYY-MM-DD-{lastname}-{company-slug}-financials.xlsx` per the project-wide convention.
 
-- Stage 1 blank template workbooks (in `templates/`).
-- Stage 3 populated, audited working models (in `builds/`).
-- Change logs and version histories for each model.
-- Model-level README files explaining inputs, sheet structure, and outputs.
-- Lightweight calculation helpers (lookup tables, parameter sheets) used by the models.
+## How this folder fits the project
 
-## What does NOT go here
+The Stage 3 workbook is the data foundation everything downstream consumes:
+- The Stage 4 spec quotes specific cell values and formulas from this workbook.
+- The Stage 5 LLM execution operates on the model's named ranges.
+- The Stage 5 manual verification table re-derives ratios by hand from this workbook to cross-check the LLM's output.
 
-- Specifications describing the model's methodology (use `docs/specs/`).
-- Raw or reference data that feeds the model (use `data/`).
-- Validation reports and audit results for the model (use `analysis/validation/`).
-- Final exported PDFs or presentations of model output (use `deliverables/`).
-- Personal scratch workbooks or experiments not intended to be shared.
+If a number in any downstream deliverable doesn't tie to this workbook, that's a bug worth tracking down — by design.
+
+## Validation
+
+The Stage 3 workbook passed all four BUS 629 Stage 3 criteria per the instructor's PR review: balance sheet balances both years, named ranges populated, documentation complete, and ratios resolve cleanly. The eight validation rules used during Stage 4 spec writing are documented in [`docs/specs/2026-05-30-cam-sectra-spec.md`](../docs/specs) Section 7.

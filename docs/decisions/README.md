@@ -1,29 +1,23 @@
-# decisions
+# docs/decisions
 
-This directory stores formal decision records (ADR-style memos) that document choices made during the BUS 629 project: methodology selections, scoping calls, trade-offs between alternatives, and approvals. Every non-trivial decision that future readers might second-guess should have a memo here.
+Decision memos documenting the major choices made during the BUS 629 Sectra project. Each memo is written in the senior-analyst memo format the course teaches — short, structured, and traceable to specific evidence.
 
-Each memo should make the decision auditable: state the question, the alternatives considered, the choice, and the reasoning. Once written, decision records are immutable — if a decision is later reversed, write a new record that supersedes the old one rather than editing history.
+## What's in here
 
-## Naming conventions
+- **`2026-05-17-cam-sectra-selection.md`** — Stage 2 company-selection memo. The original submission. Scored 97.11% (4.37 / 4.5) by Professor Stauffer with one actionable critique: the prose exceeded the 400–600-word senior-analyst target.
+- **`2026-05-31-cam-sectra-selection-revised.md`** — Revised Stage 2 memo at 478 prose words, addressing the length critique while preserving all three hypotheses (H1 working capital, H2 profitability, H3 cash conversion + FX) and the three-dimension selection rationale (industry alignment, analytical richness, international finance dimension).
+- **`2026-05-31-cam-stage2-feedback-response.md`** — Documents both the Stage 2 PR feedback (97.11%, prose-length critique) and the Stage 3 PR feedback (99%, no actionable critique but forward guidance on named-range usage and HIL iteration that was executed in Stage 4). Explains what changed in the revised memo and what was learned.
 
-- Decision memos: `DECISION_[Topic]_[YYYY-MM-DD].md` (e.g. `DECISION_ModelingApproach_2026-05-15.md`).
-- Trade-off analyses: `TRADEOFF_[OptionA-vs-OptionB]_[YYYY-MM-DD].md`.
-- Meeting notes that produced a decision: `NOTES_[MeetingType]_[YYYY-MM-DD].md`.
-- Sign-off artifacts: `SIGNOFF_[Decision]_[YYYY-MM-DD].pdf`.
-- Use kebab-case in the `[Topic]` slug; spell out the topic, do not abbreviate.
+## Why both Stage 2 versions are preserved
 
-## What goes here
+The original 2026-05-17 memo is preserved as the historical submission record — it is the version Professor Stauffer's PR review measured against. The revised 2026-05-31 version is the analytically anchored version that the downstream Stage 3 / 4 / 5 work builds on. Keeping both visible (rather than overwriting the original) maintains the audit trail that an academic or professional reviewer would expect.
 
-- Decision memos with context, options, choice, and rationale.
-- Side-by-side trade-off analyses comparing two or more options.
-- Meeting notes whose primary output is a decision or commitment.
-- Approval records, sign-offs, and stakeholder confirmations.
-- Records of reversed or superseded decisions (kept for the audit trail).
+## Naming convention
 
-## What does NOT go here
+- Stage 2 selection memo: `YYYY-MM-DD-cam-sectra-selection[-revised].md`
+- Stage 2 feedback response: `YYYY-MM-DD-cam-stage2-feedback-response.md` (no company slug — the document is about feedback process, not company analysis)
 
-- Technical specifications describing *how* something is built (use `docs/specs/`).
-- Project plans, schedules, or milestones (use `docs/plans/`).
-- General meeting notes with no decision attached (keep locally or in `docs/`).
-- Drafts of decisions that have not yet been made — keep in scratch until finalized.
-- Anything that would need to be edited regularly; decision records should be immutable.
+## How this relates to other folders
+
+- The hypotheses introduced here (H1, H2, H3) are tested against computed ratios in [`models/builds/`](../../models/builds) (Stage 3 workbook) and discussed in detail in [`deliverables/2026-05-31-cam-sectra-final-analysis.md`](../../deliverables) (Stage 5 final analysis Section 2 and Section 6).
+- The Stage 4 technical specification in [`docs/specs/`](../specs) operationalizes these hypotheses for LLM execution.

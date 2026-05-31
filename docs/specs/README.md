@@ -1,29 +1,24 @@
-# specs
+# docs/specs
 
-This directory holds technical and analytical specifications: the documents that define *how* models, datasets, and calculations are constructed. Specs are the contract between a decision and an implementation — they translate "we chose DCF" into "here are the assumptions, inputs, formulas, and outputs."
+Technical specifications written in a form precise enough that a fresh LLM, given only the spec as input, can reproduce the intended analysis without additional context. This is the "spec-driven design" discipline the course teaches: separate the specification of analytical work from its execution.
 
-Specs are versioned because methodology evolves. When a spec changes materially, bump the version rather than overwriting, and link the new version back to the decision record that authorized the change.
+## What's in here
 
-## Naming conventions
+- **`2026-05-30-cam-sectra-spec.md`** — Stage 4 specification for the Sectra ratios analysis. Two parts: **Part A** (Architecture, Data Inputs, Named Range Conventions, Derived Inputs, Ratio Definitions, Validation Rules) defines the model the LLM reads; **Part B** (Analysis, Du Pont, Recommendations, Output Format) defines the analytical work the LLM produces. Forces every formula into named-range notation (e.g. `BAL_assets_total_curr`, `INC_sales`) so the LLM can locate cells unambiguously.
 
-- Model specs: `SPEC_[ModelName]_[Component]_v[N].md` (e.g. `SPEC_DCF_Assumptions_v2.md`).
-- Data schema specs: `SPEC_DataSchema_[Entity]_v[N].md` (e.g. `SPEC_DataSchema_FinancialStatements_v1.md`).
-- Methodology documents: `METHODOLOGY_[Process]_v[N].md`.
-- Interface or integration specs: `SPEC_Interface_[System]_v[N].md`.
-- Always use `v1`, `v2`, … (no leading zeros, no `v1.0`).
+## How this folder fits the project
 
-## What goes here
+The Stage 4 spec is the input that drives Stage 5's automated ratio review. The Stage 5 LLM execution (`deliverables/*-llm-raw.md`) was produced by pasting this spec — and only this spec — into Google Gemini 2.5 Pro with no other context. The Stage 5 final analysis (`deliverables/*-final-analysis.md`) evaluated where that execution succeeded and where it deviated, and the Stage 5 spec retrospective (`deliverables/*-spec-retrospective.md`) graded the spec itself against that execution evidence.
 
-- Model architecture documents: assumptions, inputs, calculation flow, outputs.
-- Data dictionaries and schema definitions for datasets in `data/`.
-- Methodology write-ups (e.g. how WACC is calculated, how comps are selected).
-- Acceptance criteria and validation rules for models and data.
-- Worked numerical examples that anchor a calculation.
+## Spec quality discipline
 
-## What does NOT go here
+A spec is "good" to the extent that an LLM given only the spec produces a correct, comprehensive analysis. The HIL iteration documented in [`deliverables/prompt-log.md`](../../deliverables/prompt-log.md) for Stage 4 captures one such gap caught before Stage 5: the workbook's Cover sheet documents `BAL_[item]_[yr]` naming with year literals, but the implementation uses `_curr` / `_prior` aliases. The first-draft spec inherited the Cover-sheet convention, which would have caused every Excel formula reference in the LLM output to fail silently. The fix — a dedicated Section 4 "Named Range Conventions" — converted a silent failure mode into a directive.
 
-- The Excel models themselves (use `models/builds/` or `models/templates/`).
-- The raw data being described (use `data/`).
-- The reason a methodology was chosen (use `docs/decisions/`).
-- Project timelines or owner assignments (use `docs/plans/`).
-- Validation results showing the spec was met (use `analysis/validation/`).
+## Naming convention
+
+Files follow `YYYY-MM-DD-{lastname}-{company-slug}-spec.md` per the project-wide convention.
+
+## Where to look next
+
+- The spec is executed at: [`deliverables/2026-05-31-cam-sectra-llm-raw.md`](../../deliverables) (raw output) and [`deliverables/2026-05-31-cam-sectra-final-analysis.md`](../../deliverables) (evaluated).
+- The spec is critiqued at: [`deliverables/2026-05-31-cam-sectra-spec-retrospective.md`](../../deliverables) (Section-by-section verdict, top three gaps with evidence, three revisions, effectiveness rating).

@@ -1,29 +1,39 @@
 # deliverables
 
-This directory is the presentation layer of the BUS 629 portfolio. It holds the polished, audience-ready outputs: final reports, executive memos, slide decks, dashboards, and any other artifact intended to be read or presented as a finished product. Source materials live elsewhere — `deliverables/` is what you would hand to Prof. Stauffer, a recruiter, or a client.
+The Stage 5 outputs — the polished, presentation-ready end products of the BUS 629 project. If a reviewer reads only one folder in this repo, this is the one.
 
-A file does not belong here until it is reviewed, validated, and considered final-for-the-moment. Working drafts stay in their respective source folders (`docs/`, `models/`, `analysis/`) until they are ready to be promoted.
+## What's in here
 
-## Naming conventions
+- **`prompt-log.md`** — Chronological log of every meaningful AI session across the project (Stage 2, Stage 4, Stage 5 Sessions 1 and 2). Each entry documents tool used, date, session purpose, workflow steps, verification, what was kept, what was changed. Includes the Stage 4 HIL iteration note about the named-range convention gap, and the Stage 5 reconciliation note for the Stage 2 word-count discrepancy.
 
-- Reports: `[ProjectName]_Report_[Type]_v[N]_[YYYY-MM-DD].pdf` (e.g. `CapitalBudgeting_Report_Analysis_v2_2026-05-15.pdf`).
-- Memos: `MEMO_[Subject]_[YYYY-MM-DD].docx` or `.pdf`.
-- Presentations: `[ProjectName]_Presentation_[YYYY-MM-DD].pptx`.
-- Dashboards: `DASHBOARD_[MetricCategory]_[YYYY-MM-DD].xlsx`.
-- Use PascalCase for `[ProjectName]`; reserve final-status indicator `FINAL` only after sign-off.
+- **`2026-05-31-cam-sectra-llm-raw.md`** — Unedited Google Gemini 2.5 Pro output from feeding only the Stage 4 spec (no other context) into the model. Saved as the historical record of what the spec alone elicited. Eleven sections matching the spec's Section 11 Output Format.
 
-## What goes here
+- **`2026-05-31-cam-sectra-final-analysis.md`** — The evaluated, corrected, annotated final analysis. Six sections matching the Stage 5 brief: Company & Data Summary, Ratio Results & Interpretation, Du Pont Analysis, Strategic Recommendations (five recommendations with distinct addressees, evidence, action, timeline, and counter-argument), LLM Evaluation & Annotations, Executive Justification (in personal voice with the by-nature unit-economics observation as the distinctive contribution).
 
-- Final reports, memos, and write-ups submitted or shared with stakeholders.
-- Presentation decks used to brief faculty, teammates, or external audiences.
-- Executive dashboards and summary outputs derived from validated models.
-- Course submissions for BUS 629 milestones and stage gates.
-- Versioned archives of previously-delivered final outputs.
+- **`2026-05-31-cam-sectra-spec-retrospective.md`** — Template-backed self-evaluation of the Stage 4 spec, using the instructor's spec retrospective template. Six sections: section-by-section verdict (eleven Clear/Vague/Missing entries with evidence-tied symptoms), top three gaps with where/cause/fix structure, three revisions each addressing one gap, effectiveness rating of 3 with a 165-word justification, forward link, and process feedback at 147 words.
 
-## What does NOT go here
+## How to read this folder
 
-- Working drafts not yet reviewed (keep in the source folder until promotion).
-- The Excel models that generated the figures (use `models/`).
-- The raw or transformed data behind the deliverable (use `data/`).
-- The specs or decision memos backing the deliverable (use `docs/`).
-- The validation reports proving the underlying model is sound (use `analysis/validation/`).
+The recommended reading order for a reviewer:
+
+1. Start with the **final analysis** for the substantive output and the strategic recommendations.
+2. Then read the **spec retrospective** to see how I graded my own spec against what the LLM produced.
+3. Then read the **raw LLM output** alongside the [`analysis/validation/`](../analysis/validation) verification table to see exactly which parts the LLM got right and which it didn't.
+4. Then read the **prompt log** for the full process audit trail.
+
+## Naming convention
+
+Files follow `YYYY-MM-DD-{lastname}-{company-slug}-{kind}.{ext}` per the project-wide convention. The exception is `prompt-log.md`, which is a continuously updated single-file log spanning multiple stages rather than a dated artifact.
+
+## How this folder fits the project
+
+This folder is the output side of the project. The inputs are: the Stage 2 memo in [`docs/decisions/`](../docs/decisions), the Stage 3 workbook in [`models/builds/`](../models/builds), and the Stage 4 spec in [`docs/specs/`](../docs/specs). The verification artifact in [`analysis/validation/`](../analysis/validation) is what makes the final analysis defensible — without that table, the LLM's claims would be unaudited assertions rather than verified outputs.
+
+## Stage 5 brief rubric this folder addresses
+
+- Analytical correctness (25%) — final analysis Section 2 & 3
+- Manual verification artifact (10%) — lives in [`analysis/validation/`](../analysis/validation) but referenced extensively here
+- LLM evaluation + spec retrospective (25%) — final analysis Section 5 + spec retrospective file
+- Strategic recommendations + executive voice (20%) — final analysis Section 4 & 6
+- Stage 2 feedback incorporation (5%) — addressed in [`docs/decisions/2026-05-31-cam-stage2-feedback-response.md`](../docs/decisions) with cross-reference in this folder's final-analysis preamble
+- Repo polish (15%) — the structure of this repo overall, with this folder as one of the polished destinations

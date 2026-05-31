@@ -1,26 +1,25 @@
 # docs
 
-This directory is the written-word layer of the BUS 629 portfolio. It holds every artifact whose primary purpose is to explain, decide, plan, or standardize — not to compute. Anything a reader (Prof. Stauffer, a teammate, a future employer) would read to understand *why* something was built or *how* it should be used belongs here.
+This directory holds the written deliverables of the BUS 629 project: decision memos, technical specifications, and any plans or templates that are textual rather than computational. In the project's separation of concerns, `docs/` is where written reasoning lives, `models/` is where computations live, `analysis/` is where validation lives, and `deliverables/` is where the polished outputs live.
 
-The folder is organized into four sub-areas: `decisions/` for decision records, `specs/` for technical and analytical specifications, `plans/` for project plans and timelines, and `templates/` for the canonical Stage 0 course templates supplied by the instructor.
+## Subdirectories
 
-## Naming conventions
+- [`decisions/`](./decisions) — Stage 2 company-selection memo (and any subsequent decision memos). The original 2026-05-17 memo and the revised 2026-05-31 version after instructor PR feedback both live here, alongside the Stage 5 feedback-response memo.
+- [`specs/`](./specs) — Stage 4 technical specification that drives the Stage 5 LLM execution. Written in named-range notation so a fresh LLM with no other context can reproduce the analysis from the spec alone.
 
-- General documents: `[TYPE]_[Topic]_[YYYY-MM-DD].md` (e.g. `DECISION_ModelingApproach_2026-05-15.md`).
-- Versioned documents: append `_v[N]` before the date (e.g. `SPEC_DCF_Assumptions_v2.md`).
-- Use kebab-case for multi-word topics inside the slug; never use spaces.
-- All dates are ISO-8601 (`YYYY-MM-DD`), not US-style.
+## What belongs here
 
-## What goes here
+- Memos addressed to the instructor or to a hypothetical stakeholder (selection rationale, decision documentation, response to PR feedback).
+- Technical specifications describing how analytical work should be executed.
+- Plans, schemas, or written templates that downstream code or models consume.
 
-- Index/landing READMEs that route the reader to the right sub-folder.
-- Cross-cutting documentation that spans multiple sub-areas.
-- Top-level reference pages and glossaries used across the project.
+## What does NOT belong here
 
-## What does NOT go here
+- Excel workbooks or models that compute values — use [`models/`](../models).
+- Source financial data — use [`data/`](../data).
+- Verification or validation outputs — use [`analysis/`](../analysis).
+- Polished final outputs from Stage 5 — use [`deliverables/`](../deliverables).
 
-- Excel models or workbooks (use `models/`).
-- Raw data files, CSVs, or extracts (use `data/`).
-- Validation reports or audit outputs (use `analysis/validation/`).
-- Final presentation-ready deliverables (use `deliverables/`).
-- Working notes or scratch files that are not intended to be read by anyone else.
+## Naming convention
+
+All files follow `YYYY-MM-DD-{lastname}-{company-slug}-{kind}.{ext}` per the project-wide convention. The only exception is the Stage 2 feedback-response memo, which omits the company slug because it documents process learning rather than company-specific analysis: `YYYY-MM-DD-{lastname}-stage2-feedback-response.md`.

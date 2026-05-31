@@ -1,29 +1,24 @@
 # analysis
 
-This directory contains the analytical work that operates *on* the models and data: validation reports, reconciliations, sensitivity tests, scenario analyses, and any other quantitative work whose purpose is to verify, stress, or interrogate a model rather than to build one.
+Validation, self-audit, and review work. The discipline this folder enforces is that **verification is a separate artifact from analysis** — you don't smuggle the check into the conclusion; you write it down where someone can audit your audit.
 
-The folder is currently organized around `validation/`, which houses Stage 3 model-validation reports and self-audits. Additional sub-folders (e.g. `sensitivity/`, `scenarios/`) may be added as the project grows; when in doubt, put a new analytical sub-discipline under `analysis/` rather than scattering it across `models/` or `docs/`.
+## Subdirectories
 
-## Naming conventions
+- [`validation/`](./validation) — Stage 5 manual ratio verification (re-deriving ratios by hand from the Stage 3 workbook to cross-check the LLM's output), plus any HIL (human-in-the-loop) iteration notes from Stage 4 that document spec gaps caught before Stage 5.
 
-- Validation reports: `VALIDATION_[ModelName]_v[N]_[YYYY-MM-DD].md`.
-- Reconciliation files: `RECONCILIATION_[Component]_[YYYY-MM-DD].xlsx`.
-- Sensitivity tests: `SENSITIVITY_[ModelName]_[Driver]_[YYYY-MM-DD].xlsx`.
-- Scenario analyses: `SCENARIO_[ModelName]_[ScenarioName]_[YYYY-MM-DD].md`.
-- Always tie the filename to the model version being analyzed.
+## What belongs here
 
-## What goes here
+- Manual recomputations and arithmetic checks against the model's computed values.
+- Side-by-side comparisons of expected vs. actual outputs.
+- Self-audit notes documenting what was checked, what was found, and what was decided.
+- HIL iteration logs explaining gaps caught and the fixes applied.
 
-- Stage 3 validation reports and self-audit documents.
-- Reconciliations between model outputs and source data.
-- Sensitivity and scenario analyses on existing models.
-- Quantitative quality-assurance notes and findings.
-- Methodology notes specific to an analytical technique (e.g. how a sensitivity grid was set up).
+## What does NOT belong here
 
-## What does NOT go here
+- The Excel workbook itself — use [`models/`](../models).
+- The final analysis or strategic recommendations — use [`deliverables/`](../deliverables).
+- The specification being validated — use [`docs/specs/`](../docs/specs).
 
-- The models themselves (use `models/builds/`).
-- The data the models consume (use `data/`).
-- General methodology specs that describe model construction (use `docs/specs/`).
-- Final, polished analysis output prepared for an audience (use `deliverables/`).
-- Decision memos about which methodology to use (use `docs/decisions/`).
+## How this folder fits the project
+
+The Stage 5 manual verification table in [`validation/`](./validation) was the discipline that caught the LLM's hallucinated DSO baseline ("45–50 days" — a value not present in any spec or source document). Without the manual recompute, the LLM's claim that "DSO had lengthened" would have flowed through into the final analysis as fact, and Hypothesis H1 would have been "supported" on a number that does not exist. The seven-row table is the most important artifact in this folder.

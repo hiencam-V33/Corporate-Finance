@@ -1,41 +1,30 @@
-# Model Templates
+# models/templates
 
-This directory contains blank model frameworks provided by the instructor (Professor Adam Stauffer) for the BUS 629 - International Corporate Finance course at Shidler College of Business. Templates standardize architecture and named-range conventions across all students before company data is populated at Stage 3.
+The course-provided ratios template for BUS 629. **This file is unmodified** — the discipline is to keep the template intact as a reference, and to do all data entry and customization in [`models/builds/`](../builds) instead.
 
-## Current Templates
+## What's in here
 
-### performance-ratios-template.xlsx
+- **`performance-ratios-template.xlsx`** — Pre-built Excel workbook with:
+  - Income Statement, Balance Sheet, and Cash Flow tabs (empty, ready to populate).
+  - Ratios tab with formulas referencing named ranges (auto-computes once the statement tabs are filled).
+  - Cover sheet documenting the naming convention.
+  - Validation cells that flag balance-sheet mismatches and other consistency issues.
 
-Stage 1 deliverable. Unmodified copy of the instructor's master template.
+## Why unmodified
 
-**6 Tabs:**
-1. **Cover & Instructions** — Project overview and named-range key
-2. **Legend** — Color-coding conventions
-3. **Income Statement** — Skeleton with `INC_*` named-range placeholders
-4. **Balance Sheet** — Skeleton with current and prior year columns (`BAL_*`, `startYear_*`)
-5. **Cash Flow** — Operating, investing, financing activities (`CASH_*`)
-6. **Ratios** — Six categories with named-range formulas (`RATIO_*`), auto-populates from financial statements
+Two reasons:
 
-The Ratios tab is fully formulaic — no hardcoded numbers. Once Stage 3 financials are entered, ratios compute automatically.
+1. **Auditability.** A reviewer can diff my build against the original template to see exactly what I added, removed, or changed.
+2. **Reusability.** If I (or anyone else) re-runs this workflow for another company in the future, the clean template is here as the starting point.
 
-## Color Conventions
+## How to use
 
-| Color | Meaning |
-|---|---|
-| 🟡 Yellow | Inputs (raw financial data) |
-| 🔵 Blue | Assumptions |
-| 🟢 Green | Formulas |
-| ⚪ Gray | Outputs |
-
-## Usage Workflow
-
-1. **Stage 1 (current):** Template is held here unmodified. Do NOT edit master templates.
-2. **Stage 3:** Copy template from `models/templates/` to `models/builds/`, rename with company identifier, then populate with financial data.
-3. **Stage 4:** Reference template structure when writing analytical specifications.
-4. **Stage 5:** Use populated model from `models/builds/` for final deliverables.
+If you are reproducing this workflow:
+1. Copy this file to `models/builds/YYYY-MM-DD-{lastname}-{company-slug}-financials.xlsx`.
+2. Populate the Income Statement, Balance Sheet, and Cash Flow tabs from the company's audited filings.
+3. The Ratios tab will compute automatically.
+4. Do not edit anything in this `templates/` directory.
 
 ## Source
 
-Original template: [Professor Stauffer's course repo](https://github.com/adamwstauffer/shidler/blob/main/docs/templates/spreadsheets/performance-ratios-template.xlsx)
-
-Course documentation: [Stage 1 instructions](https://github.com/adamwstauffer/shidler/blob/main/courses/BUS-629-VEMBA-International-Corporate-Finance/stage1-template-architecture.md)
+Course-provided file from Professor Stauffer's course materials at [`adamwstauffer/shidler/courses/BUS-629-VEMBA-International-Corporate-Finance`](https://github.com/adamwstauffer/shidler/tree/main/courses/BUS-629-VEMBA-International-Corporate-Finance).
